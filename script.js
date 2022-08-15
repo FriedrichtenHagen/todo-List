@@ -1,15 +1,20 @@
 const sect = document.querySelector("section"); 
 const buttonOne = document.querySelector("button");
 const input = document.querySelector("input"); 
+const list = document.querySelector("ul");
 
-// buttonOne.addEventListener("click", buttonClick);
 
+// allow entry of data via "Enter" and check to make sure string is not empty
 input.addEventListener("keypress", function(event) {
- if (event.key === "Enter") {
-   //  event.preventDefault();
-     // document.getElementById("myBtn").click();
-     buttonClick();
-  }
+    if (event.key === "Enter") {
+        //  event.preventDefault();
+        if(input.value === ""){
+            alert("Not doing anything is a valid goal. But you still need to enter a valid string!");
+        }
+        else{
+            buttonClick();
+        }
+    }
 });
 
 let buttonCounter = 0;
@@ -28,13 +33,6 @@ function buttonClick(){
   let inputContent = document.querySelector("input");
   inputContent.value = "";
   buttonCounter++;
-  button.addEventListener("click", removeButton);
+  
  
-}
-
-
-
-function removeButton(){
-  alert("yo mr white");
-  //sect.removeChild(button);
 }
