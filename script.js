@@ -12,27 +12,26 @@ input.addEventListener("keypress", function(event) {
             alert("Not doing anything is a valid goal. But you still need to enter a valid string!");
         }
         else{
-            buttonClick();
+            enterInput();
         }
     }
 });
 
-let buttonCounter = 0;
 
-function buttonClick(){
+function enterInput(){
   const button = document.createElement("button");
   let inputText = document.querySelector("input").value;
+
+  const listItem = document.createElement("li") 
+  let listValue = document.querySelector("input").value;
 
   //set button to input text, add class and id, append to doc
   button.textContent = inputText;
   button.setAttribute('class', 'highlight');
-  button.setAttribute('id', buttonCounter);
   sect.appendChild(button);
 
   //clear input field
   let inputContent = document.querySelector("input");
   inputContent.value = "";
-  buttonCounter++;
-  
- 
+
 }
