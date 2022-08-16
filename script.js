@@ -22,9 +22,6 @@ function enterInput(){
   const button = document.createElement("button");
   let inputText = document.querySelector("input").value;
 
-  const listItem = document.createElement("li") 
-  let listValue = document.querySelector("input").value;
-
   //set button to input text, add class and id, append to doc
   button.textContent = inputText;
   button.setAttribute('class', 'highlight');
@@ -34,4 +31,7 @@ function enterInput(){
   let inputContent = document.querySelector("input");
   inputContent.value = "";
 
+  button.addEventListener('click', () => {
+    sect.removeChild(button);
+  });
 }
