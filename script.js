@@ -53,6 +53,7 @@ function enterInput(){
   //set button to input text, add class and id, append to doc
   listItem.textContent = inputText;
   listItem.setAttribute('class', 'highlight');
+  listItem.setAttribute('draggable', 'true');
   list.appendChild(listItem);
 
   //clear input field
@@ -65,9 +66,15 @@ function enterInput(){
   listItem.addEventListener('click', (e) => {
     listItem.classList.toggle('highlight2');
   });
+  listItem.addEventListener('dragstart', (e) => {
+    listItem.classList.add('dragging');
+  });
+  listItem.addEventListener('dragend', (e) => {
+    listItem.classList.remove('dragging');
+  });
 
 }
-
+/*
 function createNewList(){
   const newUl = document.createElement("ul");
   const varLists = document.querySelector(".varLists");
@@ -79,7 +86,7 @@ function createNewList(){
   
   varLists.appendChild(newUl);
 }
-
+*/
 
 /* use toggle to switch CSS classes
 div.classList.add('new');                                      

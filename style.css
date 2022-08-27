@@ -1,10 +1,16 @@
 h1{
     font-family: arial,sans-serif;
 }
+html{
+    height: 100%;
+}
 body{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     background-color: #beddfe;
+    margin: 0px;
 }
 .content{
     display: flex;
@@ -17,6 +23,18 @@ body{
     justify-content: right;
     font-size: small;
     font-family: arial,sans-serif;
+    height: 20px;
+}
+.footer{
+    min-height: 200px;
+    border: #3c4043 thin;
+    display: flex;
+
+}
+.dragBox1, .dragBox2, .dragBox3{
+
+    width: 33%;
+    border: #3c4043 solid 1px;
 }
 .login{
     margin: 5px;
@@ -111,5 +129,9 @@ li{
 ul{
     margin-left: 0px;
     padding-left: 0px;
+
+}
+.dragging{
+    opacity: .5;
 
 }
