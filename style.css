@@ -4,6 +4,7 @@ h1{
 body{
     display: flex;
     flex-direction: column;
+    background-color: #beddfe;
 }
 .content{
     display: flex;
