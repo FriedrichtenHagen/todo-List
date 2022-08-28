@@ -64,8 +64,10 @@ dragboxes.forEach(dragbox => {
 })
 
 
-function listToArray(){
-  let nodeList = document.querySelectorAll("#dragBox1>li");
+function listToArray(n){
+
+  let nodeList = document.querySelectorAll(`#dragBox${CSS.escape(n)}>li`);
+  console.log(nodeList);
 
   let returnString = "";
   nodeList.forEach(nodes => {
