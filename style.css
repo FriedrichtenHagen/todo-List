@@ -32,9 +32,11 @@ body{
 
 }
 .dragBox1, .dragBox2, .dragBox3{
-
+    border-radius: 30px;
     width: 33%;
-    border: #3c4043 solid 1px;
+    border: #3c4043 solid 3px;
+    margin: 1px;
+    background-color: rgb(242, 255, 251);
 }
 .login{
     margin: 5px;

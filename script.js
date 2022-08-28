@@ -27,30 +27,11 @@ newList.addEventListener("keypress", function(event) {
   }
 });
 
-/*
-function enterInput(){
-  const button = document.createElement("button");
-  let inputText = document.querySelector("input").value;
-
-  //set button to input text, add class and id, append to doc
-  button.textContent = inputText;
-  button.setAttribute('class', 'highlight');
-  sect.appendChild(button);
-
-  //clear input field
-  let inputContent = document.querySelector("input");
-  inputContent.value = "";
-
-  button.addEventListener('click', () => {
-    sect.removeChild(button);
-  });
-}
-*/
 function enterInput(){
   const listItem = document.createElement("li");
   let inputText = document.querySelector("input").value;
 
-  //set button to input text, add class and id, append to doc
+  //set button to input text, add Attributes, add child to list
   listItem.textContent = inputText;
   listItem.setAttribute('class', 'highlight');
   listItem.setAttribute('draggable', 'true');
@@ -60,6 +41,7 @@ function enterInput(){
   let inputContent = document.querySelector("input");
   inputContent.value = "";
 
+  //add eventlisteners for various events
   listItem.addEventListener('dblclick', (e) => {
       list.removeChild(listItem);
   });
@@ -74,19 +56,7 @@ function enterInput(){
   });
 
 }
-/*
-function createNewList(){
-  const newUl = document.createElement("ul");
-  const varLists = document.querySelector(".varLists");
 
-  const listItem = document.createElement("li");
-  listItem.textContent = document.querySelector("#newList").value;
-  newUl.appendChild(listItem);
-  
-  
-  varLists.appendChild(newUl);
-}
-*/
 
 /* use toggle to switch CSS classes
 div.classList.add('new');                                      
@@ -98,8 +68,6 @@ div.classList.remove('new');
 div.classList.toggle('active');                                
 // if div doesn't have class "active" then add it, or if
 // it does, then remove it
-
-
 
 use nodelist to access different list items?
 
