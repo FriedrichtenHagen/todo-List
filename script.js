@@ -49,12 +49,16 @@ function enterInput(){
 const dragboxes = document.querySelectorAll(".dragBox");
 
 dragboxes.forEach(dragbox => {
-  dragbox.addEventListener("dragover", () => {
+  dragbox.addEventListener("dragover", e => {
+    e.preventDefault();
     dragbox.classList.add("receiveDrag");
     const draggedItem = document.querySelector(".dragging");
     dragbox.appendChild(draggedItem);
   });
   dragbox.addEventListener("dragleave", () => {
+    dragbox.classList.remove("receiveDrag");
+  });
+  dragbox.addEventListener("dragend", () => {
     dragbox.classList.remove("receiveDrag");
   });
 })

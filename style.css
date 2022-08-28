@@ -37,6 +37,7 @@ body{
     border: #3c4043 solid 3px;
     margin: 1px;
     background-color: rgb(242, 255, 251);
+    padding: 5px;
 }
 .login{
     margin: 5px;
@@ -82,7 +83,7 @@ section{
     padding: 0 16px;
     line-height: 27px;
     height: 36px;
-    min-width: 200px;
+    /* min-width: 200px; */
     text-align: center;
     cursor: pointer;
     user-select: none;
