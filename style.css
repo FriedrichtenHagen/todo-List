@@ -31,7 +31,7 @@ body{
     display: flex;
 
 }
-.dragBox1, .dragBox2, .dragBox3{
+.dragBox{
     border-radius: 30px;
     width: 33%;
     border: #3c4043 solid 3px;
@@ -136,4 +136,7 @@ ul{
 .dragging{
     opacity: .5;
 
+}
+.receiveDrag{
+    background-color: purple;
 }

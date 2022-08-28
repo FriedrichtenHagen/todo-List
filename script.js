@@ -1,7 +1,7 @@
 const sect = document.querySelector("section"); 
 const input = document.querySelector("input"); 
 const list = document.querySelector("ul");
-const newList = document.querySelector("#newList");
+
 
 // allow entry of data via "Enter" and check to make sure string is not empty
 input.addEventListener("keypress", function(event) {
@@ -14,17 +14,6 @@ input.addEventListener("keypress", function(event) {
             enterInput();
         }
     }
-});
-newList.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-      //  event.preventDefault();
-      if(newList.value === ""){
-          alert("Enter the name of your new List!");
-      }
-      else{
-          createNewList();
-      }
-  }
 });
 
 function enterInput(){
@@ -57,6 +46,18 @@ function enterInput(){
 
 }
 
+const dragboxes = document.querySelectorAll(".dragBox");
+
+dragboxes.forEach(dragbox => {
+  dragbox.addEventListener("dragover", () => {
+    dragbox.classList.add("receiveDrag");
+    const draggedItem = document.querySelector(".dragging");
+    dragbox.appendChild(draggedItem);
+  });
+  dragbox.addEventListener("dragleave", () => {
+    dragbox.classList.remove("receiveDrag");
+  });
+})
 
 /* use toggle to switch CSS classes
 div.classList.add('new');                                      
