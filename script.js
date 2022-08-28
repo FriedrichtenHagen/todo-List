@@ -63,6 +63,26 @@ dragboxes.forEach(dragbox => {
   });
 })
 
+
+function listToArray(){
+  let nodeList = document.querySelectorAll("#dragBox1>li");
+
+  let returnString = "";
+  nodeList.forEach(nodes => {
+    returnString += nodes.innerHTML + ", ";
+  });
+  alert("Deine Todos sind " + returnString );
+}
+
+
+
+// allow user to place li at exact location in ul
+// currently the new li is placed at the end of the list
+
+
+
+
+
 /* use toggle to switch CSS classes
 div.classList.add('new');                                      
 // adds class "new" to your new div

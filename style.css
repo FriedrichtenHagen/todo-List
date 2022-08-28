@@ -89,7 +89,7 @@ section{
     user-select: none;
 }
 .highlight2{
-    background-color: #3387da;
+    background-color: #ff6565;
    
     border: 1px solid black;
     border-radius: 4px;
@@ -100,7 +100,7 @@ section{
     padding: 0 16px;
     line-height: 27px;
     height: 36px;
-    min-width: 200px;
+
     text-align: center;
     cursor: pointer;
     user-select: none;
@@ -139,5 +139,5 @@ ul{
 
 }
 .receiveDrag{
-    background-color: purple;
+    background-color: rgb(255, 200, 255);
 }
