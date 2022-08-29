@@ -51,6 +51,7 @@ const dragboxes = document.querySelectorAll(".dragBox");
 dragboxes.forEach(dragbox => {
   dragbox.addEventListener("dragover", e => {
     e.preventDefault();
+    const afterElement = getDragAfterElement(dragbox, e.clientY)
     dragbox.classList.add("receiveDrag");
     const draggedItem = document.querySelector(".dragging");
     dragbox.appendChild(draggedItem);
@@ -62,6 +63,17 @@ dragboxes.forEach(dragbox => {
     dragbox.classList.remove("receiveDrag");
   });
 })
+
+// allow user to place li at exact location in ul
+// currently the new li is placed at the end of the list
+
+function getDragAfterElement (dragbox, y){
+  const draggableElements = [...dragbox.querySelectorAll(".highlight:not(.dragging)")];
+  draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    console.log(box)
+  }, {offset: Number.POSITIVE_INFINITY })
+}
 
 
 function listToArray(n){
@@ -78,8 +90,7 @@ function listToArray(n){
 
 
 
-// allow user to place li at exact location in ul
-// currently the new li is placed at the end of the list
+
 
 
 
