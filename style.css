@@ -30,11 +30,12 @@ body{
     border: #3c4043 thin;
     display: flex;
     padding: 15px;
+    justify-content: space-around;
 
 }
 .dragBox{
     border-radius: 30px;
-    width: 33%;
+    min-width: 200px;
     border: #3c4043 solid 3px;
     margin: 1px;
     background-color: rgb(242, 255, 251);

@@ -52,9 +52,15 @@ dragboxes.forEach(dragbox => {
   dragbox.addEventListener("dragover", e => {
     e.preventDefault();
     const afterElement = getDragAfterElement(dragbox, e.clientY)
-    dragbox.classList.add("receiveDrag");
+    console.log(afterElement)
     const draggedItem = document.querySelector(".dragging");
-    dragbox.appendChild(draggedItem);
+    if(afterElement == null){
+      dragbox.appendChild(draggedItem);
+    } else{
+      dragbox.insertBefore(draggedItem, afterElement)
+    }
+    dragbox.classList.add("receiveDrag");
+    
   });
   dragbox.addEventListener("dragleave", () => {
     dragbox.classList.remove("receiveDrag");
@@ -69,13 +75,27 @@ dragboxes.forEach(dragbox => {
 
 function getDragAfterElement (dragbox, y){
   const draggableElements = [...dragbox.querySelectorAll(".highlight:not(.dragging)")];
-  draggableElements.reduce((closest, child) => {
+  return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect();
-    console.log(box)
-  }, {offset: Number.POSITIVE_INFINITY })
+    const offset = y - box.top -box.height / 2
+    if(offset < 0 && offset > closest.offset){
+      return {offset :offset, element: child}
+    }
+    else{
+      return closest 
+    }
+  }, {offset: Number.NEGATIVE_INFINITY }).element
 }
 
 
+
+
+
+
+
+
+
+// this function is currently not used. I plan on using it later
 function listToArray(n){
 
   let nodeList = document.querySelectorAll(`#dragBox${CSS.escape(n)}>li`);
@@ -87,10 +107,6 @@ function listToArray(n){
   });
   alert("Deine Todos sind " + returnString );
 }
-
-
-
-
 
 
 
