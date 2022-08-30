@@ -1,7 +1,7 @@
 const sect = document.querySelector("section"); 
 const input = document.querySelector("input"); 
-const list = document.querySelector("ul");
-
+const startList = document.querySelector("ul");
+const dragboxes = document.querySelectorAll(".dragBox");
 
 // allow entry of data via "Enter" and check to make sure string is not empty
 input.addEventListener("keypress", function(event) {
@@ -20,11 +20,11 @@ function enterInput(){
   const listItem = document.createElement("li");
   let inputText = document.querySelector("input").value;
 
-  //set button to input text, add Attributes, add child to list
+  //set button to input text, add Attributes, add child to startList
   listItem.textContent = inputText;
   listItem.setAttribute('class', 'highlight');
   listItem.setAttribute('draggable', 'true');
-  list.appendChild(listItem);
+  startList.appendChild(listItem);
 
   //clear input field
   let inputContent = document.querySelector("input");
@@ -32,7 +32,16 @@ function enterInput(){
 
   //add eventlisteners for various events
   listItem.addEventListener('dblclick', (e) => {
-      list.removeChild(listItem);
+      /*
+      if(listItem is child of ul.startList){
+        startList.removeChild(listItem)
+      }
+      else if(listItem is child of ul.dragBox){
+        dragboxes[0].removeChild(listItem)
+      }
+      */
+    
+      console.log("hangul")
   });
   listItem.addEventListener('click', (e) => {
     listItem.classList.toggle('highlight2');
@@ -46,13 +55,12 @@ function enterInput(){
 
 }
 
-const dragboxes = document.querySelectorAll(".dragBox");
+
 
 dragboxes.forEach(dragbox => {
   dragbox.addEventListener("dragover", e => {
     e.preventDefault();
     const afterElement = getDragAfterElement(dragbox, e.clientY)
-    console.log(afterElement)
     const draggedItem = document.querySelector(".dragging");
     if(afterElement == null){
       dragbox.appendChild(draggedItem);
