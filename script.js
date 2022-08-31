@@ -31,18 +31,7 @@ function enterInput(){
   inputContent.value = "";
 
   //add eventlisteners for various events
-  listItem.addEventListener('dblclick', (e) => {
-      /*
-      if(listItem is child of ul.startList){
-        startList.removeChild(listItem)
-      }
-      else if(listItem is child of ul.dragBox){
-        dragboxes[0].removeChild(listItem)
-      }
-      */
-    
-      console.log("hangul")
-  });
+  
   listItem.addEventListener('click', (e) => {
     listItem.classList.toggle('highlight2');
   });
@@ -97,8 +86,13 @@ function getDragAfterElement (dragbox, y){
 
 
 
-
-
+// remove Node item on double click
+document.body.addEventListener("dblclick", (e) => {
+  if(e.target.nodeName === "LI"){
+    console.log(e.target)
+    e.target.remove();
+  } 
+})
 
 
 
