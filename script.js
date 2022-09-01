@@ -33,7 +33,10 @@ function enterInput(){
   //add eventlisteners for various events
   
   listItem.addEventListener('click', (e) => {
-    listItem.classList.toggle('highlight2');
+    if(e.ctrlKey){
+      listItem.classList.toggle('highlight2');
+    }
+    
   });
   listItem.addEventListener('dragstart', (e) => {
     listItem.classList.add('dragging');
