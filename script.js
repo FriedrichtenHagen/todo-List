@@ -105,10 +105,14 @@ function listToArray(n){
 
 const footer = document.querySelector(".footer")
 const listButton = document.querySelector("button")
+let listCounter = 3
+
 listButton.addEventListener("click", e => {
   let newList = document.createElement("ul")
+  listCounter++
+  let dragId = "dragBox"+listCounter
   newList.classList.add("dragBox")
-  newList.setAttribute("id", "dragBox4")
+  newList.setAttribute("id", `${dragId}`)
   footer.appendChild(newList) 
 })
 

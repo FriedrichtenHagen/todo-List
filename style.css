@@ -18,18 +18,12 @@ input{
 button{
     background-color: #f8f9fa;
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 100px;
     color: #3c4043;
     font-family: arial,sans-serif;
-    font-size: 14px;
-    margin: 11px 4px;
-    padding: 0 16px;
-    line-height: 27px;
-    height: 36px;
-    min-width: 54px;
-    text-align: center;
+    font-size: 15px;
+    padding: 15px;
     cursor: pointer;
-    user-select: none;
 }
 .content{
     display: flex;
@@ -49,9 +43,9 @@ button{
     min-height: 200px;
     border: #3c4043 thin;
     display: flex;
+    flex-wrap: wrap;
     padding: 15px;
     justify-content: space-around;
-
 }
 .dragBox{
     border-radius: 30px;
@@ -62,8 +56,7 @@ button{
     background-color: rgb(242, 255, 251);
     padding: 5px;
     transition: all .2s ease-in-out;
-    min-height: 300px;
-    height: 300px;
+    min-height: 200px;
 }
 .login{
     margin: 5px;
