@@ -143,6 +143,8 @@ li{
 ul{
     margin-left: 0px;
     padding-left: 0px;
+}
+ul.startList{
     display: flex;
     flex-wrap: wrap;
 }
