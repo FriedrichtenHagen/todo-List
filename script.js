@@ -93,7 +93,6 @@ document.body.addEventListener("dblclick", (e) => {
 
 // this function is currently not used. I plan on using it later
 function listToArray(n){
-
   let nodeList = document.querySelectorAll(`#dragBox${CSS.escape(n)}>li`);
   console.log(nodeList);
 
@@ -103,3 +102,13 @@ function listToArray(n){
   });
   alert("Deine Todos sind " + returnString );
 }
+
+const footer = document.querySelector(".footer")
+const listButton = document.querySelector("button")
+listButton.addEventListener("click", e => {
+  let newList = document.createElement("ul")
+  newList.classList.add("dragBox")
+  newList.setAttribute("id", "dragBox4")
+  footer.appendChild(newList) 
+})
+

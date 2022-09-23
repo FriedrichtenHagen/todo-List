@@ -12,13 +12,31 @@ body{
     background-color: #beddfe;
     margin: 0px;
 }
+input{
+    min-height: 30px;
+}
+button{
+    background-color: #f8f9fa;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
 .content{
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
     height: 300px;
-    
 }
 .header{
     display: flex;
@@ -38,12 +56,14 @@ body{
 .dragBox{
     border-radius: 30px;
     min-width: 200px;
+    width: 200px;
     border: #3c4043 solid 3px;
     margin: 1px;
     background-color: rgb(242, 255, 251);
     padding: 5px;
     transition: all .2s ease-in-out;
     min-height: 300px;
+    height: 300px;
 }
 .login{
     margin: 5px;
