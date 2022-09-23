@@ -116,3 +116,9 @@ listButton.addEventListener("click", e => {
   footer.appendChild(newList) 
 })
 
+/* 
+Todos: 
+
+add eventlisteners for drag and drop on new lists!
+
+*/
