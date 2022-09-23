@@ -7,7 +7,7 @@ html{
 body{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 100%;
     background-color: #beddfe;
     margin: 0px;
@@ -15,8 +15,10 @@ body{
 .content{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
+    height: 300px;
+    
 }
 .header{
     display: flex;
@@ -41,6 +43,7 @@ body{
     background-color: rgb(242, 255, 251);
     padding: 5px;
     transition: all .2s ease-in-out;
+    min-height: 300px;
 }
 .login{
     margin: 5px;
@@ -76,7 +79,6 @@ section{
 }
 .highlight{
     background-color: #f8f9fa;
-   
     border: 1px solid black;
     border-radius: 4px;
     color: #3c4043;
@@ -93,7 +95,6 @@ section{
 }
 .highlight2{
     background-color: #ff6565;
-   
     border: 1px solid black;
     border-radius: 4px;
     color: #3c4043;
@@ -103,7 +104,6 @@ section{
     padding: 0 16px;
     line-height: 27px;
     height: 36px;
-
     text-align: center;
     cursor: pointer;
     user-select: none;
@@ -119,11 +119,9 @@ li{
 ul{
     margin-left: 0px;
     padding-left: 0px;
-
 }
 .dragging{
     opacity: .5;
-
 }
 .receiveDrag{
     background-color: rgb(255, 200, 255);

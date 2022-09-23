@@ -47,8 +47,6 @@ function enterInput(){
 
 }
 
-
-
 dragboxes.forEach(dragbox => {
   dragbox.addEventListener("dragover", e => {
     e.preventDefault();
@@ -71,8 +69,6 @@ dragboxes.forEach(dragbox => {
 })
 
 // allow user to place li at exact location in ul
-// currently the new li is placed at the end of the list
-
 function getDragAfterElement (dragbox, y){
   const draggableElements = [...dragbox.querySelectorAll(".highlight:not(.dragging)")];
   return draggableElements.reduce((closest, child) => {
@@ -87,8 +83,6 @@ function getDragAfterElement (dragbox, y){
   }, {offset: Number.NEGATIVE_INFINITY }).element
 }
 
-
-
 // remove Node item on double click
 document.body.addEventListener("dblclick", (e) => {
   if(e.target.nodeName === "LI"){
@@ -96,9 +90,6 @@ document.body.addEventListener("dblclick", (e) => {
     e.target.remove();
   } 
 })
-
-
-
 
 // this function is currently not used. I plan on using it later
 function listToArray(n){
@@ -112,22 +103,3 @@ function listToArray(n){
   });
   alert("Deine Todos sind " + returnString );
 }
-
-
-
-
-
-/* use toggle to switch CSS classes
-div.classList.add('new');                                      
-// adds class "new" to your new div
-
-div.classList.remove('new');                                   
-// removes "new" class from div
-
-div.classList.toggle('active');                                
-// if div doesn't have class "active" then add it, or if
-// it does, then remove it
-
-use nodelist to access different list items?
-
-*/
