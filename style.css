@@ -140,6 +140,9 @@ li{
     justify-content: center;
     align-items: center;
 }
+li:hover{
+    background-color: #f6ea84;
+}
 ul{
     margin-left: 0px;
     padding-left: 0px;
