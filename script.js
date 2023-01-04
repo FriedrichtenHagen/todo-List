@@ -34,8 +34,7 @@ const workout = createTodoObject("overheadpress", "Work on overhead strength", "
 function createListObject(listTitle){
   return {
     listTitle : listTitle, 
-    listArray : [{arow : "milk", carrot : "orange"},3,5],
-
+    todoArray : [{arow : "milk", carrot : "orange"},workout,5],
   }
 }
 
@@ -170,4 +169,17 @@ Todos:
 
 add eventlisteners for drag and drop on new lists!
 
+create form to input all todo information
+
+handle adding todo object to list object (push to list.todoArray) on dragdrop
+drag and drop does not work on mobile!
+
+maybe enable a different layer per project
+accessable via menu (similiar to restaurant project)
+
+
+CSS
+  add box shadows
+  adjust width of lists
+  work on usability of entering and creating new list (currently not intuitive)
 */
