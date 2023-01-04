@@ -8,14 +8,30 @@ input.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         //  event.preventDefault();
         if(input.value === ""){
-            alert("Not doing anything is a valid goal. But you still need to enter a valid string!");
+            alert("Not doing anything is a valid goal. But you still need to enter a string!");
         }
         else{
             enterInput();
+            clearInputField()
         }
     }
 });
 
+// create todo object
+function createTodoObject(title, description, dueDate, priority){
+  return {
+    title : title,
+    description : description,
+    
+
+  }
+  
+
+}
+const workout = createTodoObject("overheadpress", "Work on overhead strength")
+
+
+// add object to DOM
 function enterInput(){
   const listItem = document.createElement("li");
   let inputText = document.querySelector("input").value;
@@ -26,12 +42,7 @@ function enterInput(){
   listItem.setAttribute('draggable', 'true');
   startList.appendChild(listItem);
 
-  //clear input field
-  let inputContent = document.querySelector("input");
-  inputContent.value = "";
-
   //add eventlisteners for various events
-  
   listItem.addEventListener('click', (e) => {
     if(e.ctrlKey){
       listItem.classList.toggle('highlight2');
@@ -44,7 +55,11 @@ function enterInput(){
   listItem.addEventListener('dragend', (e) => {
     listItem.classList.remove('dragging');
   });
+}
 
+function clearInputField(){
+    let inputContent = document.querySelector("input");
+    inputContent.value = "";
 }
 
 dragboxes.forEach(dragbox => {
@@ -109,6 +124,27 @@ let listCounter = 3
 
 listButton.addEventListener("click", e => {
   let newList = document.createElement("ul")
+  newList.setAttribute('draggable', 'true');
+  newList.addEventListener('dragstart', (e) => {
+    newList.classList.add('dragging');
+  });
+  newList.addEventListener('dragend', (e) => {
+    newList.classList.remove('dragging');
+  });
+  newList.addEventListener("dragover", e => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement(dragbox, e.clientY)
+    const draggedItem = document.querySelector(".dragging");
+    if(afterElement == null){
+      newList.appendChild(draggedItem);
+    } else{
+      newList.insertBefore(draggedItem, afterElement)
+    }
+    newList.classList.add("receiveDrag");
+  });
+
+
+
   listCounter++
   let dragId = "dragBox"+listCounter
   newList.classList.add("dragBox")
