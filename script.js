@@ -22,13 +22,26 @@ function createTodoObject(title, description, dueDate, priority){
   return {
     title : title,
     description : description,
-    
+    dueDate : dueDate,
+    priority : priority,
 
   }
-  
-
 }
-const workout = createTodoObject("overheadpress", "Work on overhead strength")
+
+const workout = createTodoObject("overheadpress", "Work on overhead strength", "01.03.2023", 3)
+
+// create list object
+function createListObject(listTitle){
+  return {
+    listTitle : listTitle, 
+    listArray : [{arow : "milk", carrot : "orange"},3,5],
+
+  }
+}
+
+const thursdayList = createListObject("Thursday")
+
+
 
 
 // add object to DOM
